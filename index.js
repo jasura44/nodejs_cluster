@@ -18,8 +18,7 @@ if (cluster.isMaster) {
     });
 } else {
     // Worker processes
-      // Worker processes run the HTTP server
-  http.createServer((req, res) => {
+    http.createServer((req, res) => {
     res.writeHead(200);
     res.end(`Hello from worker ${process.pid}\n`);
   }).listen(3000, () => {
